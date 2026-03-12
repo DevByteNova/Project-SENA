@@ -74,7 +74,7 @@ function performLogin(email, password) {
 
         // Simulate redirect
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }, 1500);
     }, 2000);
 }
