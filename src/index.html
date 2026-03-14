@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Panel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <div class="logo">Dashboard</div>
+            <div class="logo">Panel</div>
             <div class="header-menu">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Profile</a>
-                <a href="#" class="nav-link">Settings</a>
+                <a href="#" class="nav-link">Inicio</a>
+                <a href="#" class="nav-link">Perfil</a>
+                <a href="#" class="nav-link">Ajustes</a>
+                <button class="logout-btn" type="button">Cerrar sesión</button>
             </div>
         </div>
     </header>
@@ -25,11 +26,11 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Settings</a></li>
+                    <li><a href="#" class="active">Panel</a></li>
+                    <li><a href="#">Analíticas</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Usuarios</a></li>
+                    <li><a href="#">Ajustes</a></li>
                 </ul>
             </nav>
         </aside>
@@ -37,65 +38,65 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="page-header">
-                <h1>Welcome to Dashboard</h1>
-                <p>Monitor your key metrics and data</p>
+                <h1>Bienvenido al Panel</h1>
+                <p>Monitorea tus métricas y datos clave</p>
             </div>
 
             <!-- Dashboard Cards -->
             <section class="cards-grid">
                 <div class="card">
-                    <div class="card-header">Total Users</div>
+                    <div class="card-header">Usuarios totales</div>
                     <div class="card-value">1,234</div>
-                    <div class="card-footer">+12% from last month</div>
+                    <div class="card-footer">+12% respecto al mes pasado</div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">Revenue</div>
+                    <div class="card-header">Ingresos</div>
                     <div class="card-value">$45,678</div>
-                    <div class="card-footer">+8% from last month</div>
+                    <div class="card-footer">+8% respecto al mes pasado</div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">Orders</div>
+                    <div class="card-header">Pedidos</div>
                     <div class="card-value">567</div>
-                    <div class="card-footer">+15% from last month</div>
+                    <div class="card-footer">+15% respecto al mes pasado</div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">Conversion</div>
+                    <div class="card-header">Conversión</div>
                     <div class="card-value">3.25%</div>
-                    <div class="card-footer">-2% from last month</div>
+                    <div class="card-footer">-2% respecto al mes pasado</div>
                 </div>
             </section>
 
             <!-- Charts Section -->
             <section class="charts-section">
                 <div class="chart-container">
-                    <h2>Sales Overview</h2>
+                    <h2>Resumen de ventas</h2>
                     <div class="placeholder">
-                        <p>Chart would go here</p>
+                        <p>Aquí iría el gráfico</p>
                     </div>
                 </div>
 
                 <div class="chart-container">
-                    <h2>User Activity</h2>
+                    <h2>Actividad de usuarios</h2>
                     <div class="placeholder">
-                        <p>Chart would go here</p>
+                        <p>Aquí iría el gráfico</p>
                     </div>
                 </div>
             </section>
 
             <!-- Table Section -->
             <section class="table-section">
-                <h2>Recent Transactions</h2>
+                <h2>Transacciones recientes</h2>
                 <table class="dashboard-table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Customer</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                            <th>Status</th>
+                            <th>Cliente</th>
+                            <th>Importe</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -103,22 +104,22 @@
                             <td>#001</td>
                             <td>John Smith</td>
                             <td>$299.99</td>
-                            <td>Mar 10, 2026</td>
-                            <td><span class="badge-success">Completed</span></td>
+                            <td>10 mar 2026</td>
+                            <td><span class="badge-success">Completado</span></td>
                         </tr>
                         <tr>
                             <td>#002</td>
                             <td>Jane Doe</td>
                             <td>$450.50</td>
-                            <td>Mar 10, 2026</td>
-                            <td><span class="badge-success">Completed</span></td>
+                            <td>10 mar 2026</td>
+                            <td><span class="badge-success">Completado</span></td>
                         </tr>
                         <tr>
                             <td>#003</td>
                             <td>Bob Johnson</td>
                             <td>$125.00</td>
-                            <td>Mar 11, 2026</td>
-                            <td><span class="badge-pending">Pending</span></td>
+                            <td>11 mar 2026</td>
+                            <td><span class="badge-pending">Pendiente</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -128,8 +129,11 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Dashboard. All rights reserved.</p>
+        <p>&copy; 2026 Panel. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
     <script src="script.js"></script>
 </body>
 </html>

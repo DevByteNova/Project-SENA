@@ -221,6 +221,36 @@ body {
     box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
 }
 
+.logout-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    background: #e5e7eb;
+    color: var(--gray-900);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logout-button:hover {
+    background: #d1d5db;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.logout-button:active {
+    transform: translateY(0);
+}
+
+.logout-button:focus-visible {
+    outline: 3px solid rgba(168, 85, 247, 0.75);
+    outline-offset: 3px;
+}
+
 .login-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
