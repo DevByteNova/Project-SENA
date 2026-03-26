@@ -3,7 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeLoginForm();
     initializeForgotPassword();
     initializeSignUpLink();
+    initializeLogoutButton();
 });
+
+function initializeLogoutButton() {
+    const logoutButton = document.querySelector('.logout-button');
+
+    if (!logoutButton) return;
+
+    logoutButton.addEventListener('click', () => {
+        window.location.href = '../index.html';
+    });
+}
 
 // Initialize Login Form
 function initializeLoginForm() {
@@ -17,19 +28,19 @@ function initializeLoginForm() {
         const email = emailInput.value.trim();
         const password = passwordInput.value;
 
-        // Basic validation
+        // Validación básica
         if (!email || !password) {
-            showError('Please fill in all fields');
+            showError('Por favor completa todos los campos');
             return;
         }
 
         if (!isValidEmail(email)) {
-            showError('Please enter a valid email address');
+            showError('Por favor ingresa una dirección de correo válida');
             return;
         }
 
         if (password.length < 6) {
-            showError('Password must be at least 6 characters');
+            showError('La contraseña debe tener al menos 6 caracteres');
             return;
         }
 
@@ -70,7 +81,7 @@ function performLogin(email, password) {
         loginButton.classList.remove('loading');
 
         // Show success message
-        showSuccess(`Welcome back! Redirecting to dashboard...`);
+        showSuccess('¡Bienvenido de vuelta! Redirigiendo al panel...');
 
         // Simulate redirect
         setTimeout(() => {
@@ -178,5 +189,5 @@ styleSheet.textContent = styles;
 document.head.appendChild(styleSheet);
 
 // Console message
-console.log('%c Login Page Ready!', 'color: #a855f7; font-size: 16px; font-weight: bold;');
-console.log('Use test credentials: any@email.com / password123');
+    console.log('%c Página de inicio de sesión lista!', 'color: #a855f7; font-size: 16px; font-weight: bold;');
+    console.log('Prueba con credenciales: cualquier@email.com / password123');

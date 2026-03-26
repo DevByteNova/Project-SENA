@@ -18,8 +18,51 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: --gray-100;
+    background-color: var(--gray-100);
     color: #374151;
+}
+
+.logout-btn {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: var(--primary-color);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logout-btn:hover {
+    background: rgba(168, 85, 247, 0.18);
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1100;
+    pointer-events: none;
+}
+
+.toast {
+    background: rgba(17, 24, 39, 0.92);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: auto;
+}
+
+.toast.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
 }
 
 /* Header Styling */
