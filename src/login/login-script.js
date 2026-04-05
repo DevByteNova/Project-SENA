@@ -12,7 +12,7 @@ function initializeLogoutButton() {
     if (!logoutButton) return;
 
     logoutButton.addEventListener('click', () => {
-        window.location.href = '../index.html';
+        window.location.href = '../pages/home.html';
     });
 }
 
@@ -85,12 +85,10 @@ function performLogin(email, password) {
 
         // Simulate redirect
         setTimeout(() => {
-            window.location.href = '../index.html';
+            window.location.href = '../pages/home.html';
         }, 1500);
     }, 2000);
 }
-
-// Show Error Message
 function showError(message) {
     const form = document.getElementById('loginForm');
     removeMessages();
