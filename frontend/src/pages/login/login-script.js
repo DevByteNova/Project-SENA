@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeForgotPassword();
     initializeSignUpLink();
     initializeLogoutButton();
+    initializeAccessToggle();
 });
 
 function initializeLogoutButton() {
@@ -19,6 +20,8 @@ function initializeLogoutButton() {
 // Initialize Login Form
 function initializeLoginForm() {
     const form = document.getElementById('loginForm');
+    if (!form) return;
+
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
 
@@ -121,6 +124,7 @@ function removeMessages() {
 // Forgot Password
 function initializeForgotPassword() {
     const forgotLink = document.querySelector('.forgot-password');
+    if (!forgotLink) return;
 
     forgotLink.addEventListener('click', (e) => {
         e.preventDefault();
@@ -141,11 +145,55 @@ function showForgotPasswordModal() {
 // Sign Up Link
 function initializeSignUpLink() {
     const signupLink = document.querySelector('.signup-link a');
+    if (!signupLink) return;
 
     signupLink.addEventListener('click', (e) => {
         e.preventDefault();
         alert('Sign up page would open here');
     });
+}
+
+function initializeAccessToggle() {
+    const buttons = document.querySelectorAll('.access-button');
+    const heading = document.getElementById('loginHeading');
+    const description = document.getElementById('roleDescription');
+    const submitButton = document.querySelector('.login-button');
+
+    if (!buttons.length || !heading || !description || !submitButton) return;
+
+    const roleConfig = {
+        clientes: {
+            title: 'Acceso Clientes',
+            description: 'Inicia sesión como cliente para acceder a tu panel.',
+            submitText: 'Iniciar sesión Clientes'
+        },
+        vendedores: {
+            title: 'Acceso Vendedores',
+            description: 'Inicia sesión como vendedor para gestionar ventas y productos.',
+            submitText: 'Iniciar sesión Vendedores'
+        }
+    };
+
+    function setRole(role) {
+        const config = roleConfig[role] || roleConfig.clientes;
+
+        buttons.forEach((btn) => {
+            btn.classList.toggle('active', btn.dataset.access === role);
+        });
+
+        heading.textContent = config.title;
+        description.textContent = config.description;
+        submitButton.textContent = config.submitText;
+        submitButton.setAttribute('aria-label', config.submitText);
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            setRole(button.dataset.access);
+        });
+    });
+
+    setRole('clientes');
 }
 
 // Add CSS for messages dynamically
