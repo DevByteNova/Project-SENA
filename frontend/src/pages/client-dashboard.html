@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">Dashboard Clientes</div>
+            <div class="header-menu">
+                <a href="#" class="nav-link">Inicio</a>
+                <a href="#" class="nav-link">Mis pedidos</a>
+                <a href="#" class="nav-link">Cuenta</a>
+                <button class="logout-btn" type="button" onclick="window.location.href='login/login.html'">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Bienvenido, cliente</h1>
+                <p>Revisa tu historial de pedidos y promociones personalizadas.</p>
+            </div>
+
+            <section class="cards-grid">
+                <div class="card">
+                    <div class="card-header">Pedidos activos</div>
+                    <div class="card-value">3</div>
+                    <div class="card-footer">Actualizado hace unos minutos</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Total gastado</div>
+                    <div class="card-value">$1,245</div>
+                    <div class="card-footer">Este mes</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Promociones</div>
+                    <div class="card-value">2 activas</div>
+                    <div class="card-footer">Aprovecha hoy</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Soporte</div>
+                    <div class="card-value">Disponible</div>
+                    <div class="card-footer">Responde en menos de 1h</div>
+                </div>
+            </section>
+
+            <section class="table-section">
+                <h2>Mis pedidos recientes</h2>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Pedido</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1456</td>
+                            <td>05 abr 2026</td>
+                            <td><span class="badge-success">En camino</span></td>
+                            <td>$89.90</td>
+                        </tr>
+                        <tr>
+                            <td>#1449</td>
+                            <td>28 mar 2026</td>
+                            <td><span class="badge-success">Entregado</span></td>
+                            <td>$42.50</td>
+                        </tr>
+                        <tr>
+                            <td>#1431</td>
+                            <td>20 mar 2026</td>
+                            <td><span class="badge-pending">Pendiente</span></td>
+                            <td>$130.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Panel Cliente. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

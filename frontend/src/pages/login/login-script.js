@@ -68,6 +68,11 @@ function isValidEmail(email) {
 }
 
 // Perform Login
+function getSelectedRole() {
+    const activeButton = document.querySelector('.access-button.active');
+    return activeButton?.dataset.access || 'clientes';
+}
+
 function performLogin(email, password) {
     const loginButton = document.querySelector('.login-button');
     const originalText = loginButton.textContent;
@@ -88,10 +93,13 @@ function performLogin(email, password) {
 
         // Simulate redirect
         setTimeout(() => {
-            window.location.href = '../pages/home.html';
+            const role = getSelectedRole();
+            const targetPage = role === 'clientes' ? '../client-dashboard.html' : '../dashboard.html';
+            window.location.href = targetPage;
         }, 1500);
     }, 2000);
 }
+
 function showError(message) {
     const form = document.getElementById('loginForm');
     removeMessages();
@@ -179,6 +187,7 @@ function initializeAccessToggle() {
 
         buttons.forEach((btn) => {
             btn.classList.toggle('active', btn.dataset.access === role);
+            btn.setAttribute('aria-pressed', btn.dataset.access === role ? 'true' : 'false');
         });
 
         heading.textContent = config.title;
