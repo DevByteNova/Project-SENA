@@ -246,3 +246,30 @@ document.head.appendChild(styleSheet);
 // Console message
     console.log('%c Página de inicio de sesión lista!', 'color: #a855f7; font-size: 16px; font-weight: bold;');
     console.log('Prueba con credenciales: cualquier@email.com / password123');
+// login-script.js
+const formulario = document.getElementById('miFormulario');
+
+formulario.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita que la página se recargue
+
+    // Clonamos los datos del formulario
+    const datos = new FormData(formulario);
+
+    try {
+        // Hacemos la petición al puente PHP que crearemos en el backend
+        const respuesta = await fetch('http://localhost/Project-SENA-main/backend/src/routes/guardar_usuario.php', {
+            method: 'POST',
+            body: datos
+        });
+
+        const resultado = await respuesta.json();
+        
+        if (resultado.success) {
+            alert("¡Datos guardados con éxito!");
+        } else {
+            alert("Error: " + resultado.message);
+        }
+    } catch (error) {
+        console.error("Error en la conexión:", error);
+    }
+});
